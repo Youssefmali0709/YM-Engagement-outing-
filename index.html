@@ -9,7 +9,7 @@
         :root {
             --gold: #c5a059;
             --blush: #fffafc;
-            --dark-grey: #555555; /* Darker for better visibility */
+            --dark-grey: #555555; 
             --medium-grey: #777777;
             --text: #333333;
             --white: #ffffff;
@@ -41,13 +41,12 @@
             margin: 20px auto;
         }
 
-        /* Centering the Names vertically between the two lines */
         h2 { 
             font-weight: 400; 
             letter-spacing: 5px; 
             text-transform: uppercase; 
             font-size: 0.9rem; 
-            margin: 0 0 15px 0; /* Space below Save the Date */
+            margin: 0 0 15px 0; 
             color: var(--dark-grey); 
         }
 
@@ -55,7 +54,7 @@
             font-family: 'Dancing Script', cursive;
             font-size: 2.4rem; 
             color: var(--gold);
-            margin: 0; /* Removed margins to allow precise spacing */
+            margin: 0; 
             padding: 10px 0;
             font-weight: 600;
             white-space: nowrap;
@@ -67,11 +66,10 @@
             letter-spacing: 3px; 
             color: var(--dark-grey); 
             font-size: 0.85rem; 
-            margin: 15px 0 0 0; /* Space above Are Getting Engaged */
+            margin: 15px 0 0 0; 
             text-transform: uppercase;
         }
 
-        /* Large Date */
         .the-date {
             font-size: 2rem;
             font-weight: 600;
@@ -81,7 +79,6 @@
             letter-spacing: 1px;
         }
 
-        /* Countdown - Darker Labels */
         #countdown {
             display: flex;
             justify-content: center;
@@ -140,15 +137,32 @@
             width: 100%;
             box-sizing: border-box;
             margin-bottom: 15px;
-            font-family: inherit;
+            font-family: 'Cormorant Garamond', serif; /* Restored font */
             border-radius: 5px;
             text-align: center;
             font-size: 1rem;
             color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .btn-yes { background: var(--gold); color: white; padding: 16px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; border-radius: 5px; margin-bottom: 10px; font-weight: 600;}
-        .btn-no { background: #e0e0e0; color: #555555; padding: 16px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; border-radius: 5px; font-weight: 600;}
+        /* RESTORED BUTTON FONT STYLE */
+        button {
+            padding: 16px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif; /* Restored font */
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 3px; /* Wider spacing like old version */
+            font-size: 0.9rem;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .btn-yes { background: var(--gold); color: white; margin-bottom: 10px; }
+        .btn-no { background: #e0e0e0; color: #555555; }
         
         #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; font-weight: 600;}
 
