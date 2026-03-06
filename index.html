@@ -131,30 +131,34 @@
             letter-spacing: 1px;
         }
 
+        /* Updated Placeholder Styling */
         input[type="text"] {
-            padding: 14px;
+            padding: 12px;
             border: 1px solid #cccccc;
             width: 100%;
             box-sizing: border-box;
             margin-bottom: 15px;
-            font-family: 'Cormorant Garamond', serif; /* Restored font */
+            font-family: 'Cormorant Garamond', serif;
             border-radius: 5px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.9rem; /* Smaller Font */
             color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        /* RESTORED BUTTON FONT STYLE */
+        input[type="text"]::placeholder {
+            text-transform: none; /* Not All-Caps */
+            color: var(--medium-grey);
+            opacity: 0.8;
+        }
+
         button {
             padding: 16px;
             border: none;
             cursor: pointer;
-            font-family: 'Cormorant Garamond', serif; /* Restored font */
+            font-family: 'Cormorant Garamond', serif; 
             transition: 0.3s;
             text-transform: uppercase;
-            letter-spacing: 3px; /* Wider spacing like old version */
+            letter-spacing: 3px; 
             font-size: 0.9rem;
             width: 100%;
             border-radius: 5px;
@@ -198,7 +202,7 @@
         <div class="rsvp-section">
             <h3>Kindly RSVP</h3>
             <div id="formWrapper">
-                <input type="text" id="guestName" placeholder="ENTER YOUR FULL NAME" required>
+                <input type="text" id="guestName" placeholder="Full Name" required>
                 <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
                 <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
             </div>
