@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
@@ -39,15 +39,17 @@
             margin: 20px auto;
         }
 
-        /* Fixed Capitalization and Size */
+        /* Using Playfair Display to ensure Y and M are Capitalized */
         h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem; /* Elegant smaller size */
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; 
+            font-style: italic;
             color: var(--gold);
-            margin: 10px 0;
-            font-weight: 400;
+            margin: 15px 0;
+            font-weight: 600;
             white-space: nowrap;
-            text-transform: none !important; /* Forces the Y and M to stay capital */
+            text-transform: none !important; /* Strict override */
+            letter-spacing: 1px;
         }
 
         h2 { 
@@ -60,7 +62,7 @@
         }
 
         .the-date {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 600;
             display: block;
             margin: 15px 0 5px 0;
@@ -103,105 +105,4 @@
 
         input[type="text"] {
             padding: 12px;
-            border: 1px solid #ddd;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 12px;
-            font-family: inherit;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .btn-group { display: flex; flex-direction: column; gap: 10px; }
-
-        button {
-            padding: 14px;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            width: 100%;
-            border-radius: 4px;
-        }
-
-        .btn-yes { background: var(--gold); color: white; }
-        .btn-no { background: #e0e0e0; color: #666; }
-        
-        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; }
-            .the-date { font-size: 1.5rem; }
-            .container { width: 90%; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h2>Save The Date</h2>
-        <h1>Youssef & Maryam</h1>
-        <p style="letter-spacing: 2px; color: #777; font-size: 0.75rem; margin-top: -10px;">ARE GETTING ENGAGED</p>
-
-        <span class="the-date">Saturday 28 March 2026</span>
-
-        <div id="countdown">
-            <div class="time-box"><span class="time-val" id="days">00</span><span class="time-label">Days</span></div>
-            <div class="time-box"><span class="time-val" id="hours">00</span><span class="time-label">Hrs</span></div>
-            <div class="time-box"><span class="time-val" id="mins">00</span><span class="time-label">Mins</span></div>
-            <div class="time-box"><span class="time-val" id="secs">00</span><span class="time-label">Secs</span></div>
-        </div>
-
-        <div class="details">
-            <a href="https://maps.app.goo.gl/aYjqKGjWmboGDMwY6" target="_blank">Aperitivo</a><br>
-            157, 26th July street, Zamalek<br>
-            <span style="font-size: 0.9rem; color: #999;">Minimum Charge: 1200 LE</span>
-        </div>
-
-        <div class="rsvp-section">
-            <h3 style="font-weight: 300; margin-top: 0; font-size: 1rem;">Kindly RSVP</h3>
-            <div id="formWrapper">
-                <input type="text" id="guestName" placeholder="Your Full Name" required>
-                <div class="btn-group">
-                    <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
-                    <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
-                </div>
-            </div>
-            <p id="responseMsg" style="display:none;">Thank you! We've saved your response.</p>
-        </div>
-    </div>
-
-    <script>
-        // Use the exact date for countdown
-        const targetDate = new Date("March 28, 2026 19:00:00").getTime();
-
-        setInterval(() => {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("mins").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("secs").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
-
-        function submitRSVP(status) {
-            const name = document.getElementById('guestName').value;
-            const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
-            if (!name) { alert("Please enter your name."); return; }
-
-            document.getElementById('btnYes').innerText = "Processing...";
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify({ "name": name, "status": status })
-            }).then(() => {
-                document.getElementById('formWrapper').style.display = 'none';
-                document.getElementById('responseMsg').style.display = 'block';
-            });
-        }
-    </script>
-</body>
-</html>
+            border: 1px solid
