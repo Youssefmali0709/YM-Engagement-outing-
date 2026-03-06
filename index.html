@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
@@ -41,13 +41,14 @@
             margin: 20px auto;
         }
 
+        /* NEW CURSIVE FONT: Dancing Script */
         h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
             color: var(--gold);
             margin: 0; 
             padding: 0;
-            font-weight: 400;
+            font-weight: 600;
             white-space: nowrap;
             text-transform: none !important;
             line-height: 1.1;
@@ -97,7 +98,8 @@
             color: var(--text);
         }
 
-        .venue-invite {
+        /* Updated Venue Styling */
+        .venue-full-line {
             display: block;
             margin-bottom: 8px;
             font-size: 1.05rem;
@@ -107,12 +109,13 @@
             color: var(--gold); 
             text-decoration: none; 
             font-weight: 600;
-            font-size: 1.2rem; /* Aperitivo Font Size */
+            font-size: 1.2rem;
+            margin-left: 2px;
         }
 
         .address {
             display: block;
-            font-size: 0.9rem; /* Smaller Font for address */
+            font-size: 0.9rem;
             color: var(--medium-grey);
             margin-top: 5px;
         }
@@ -128,132 +131,15 @@
             font-weight: 600;
         }
 
+        /* UPDATED: Removed Italic */
         .special-note {
             font-size: 1rem;
             color: var(--dark-grey);
             display: block;
             margin-top: 8px;
-            font-style: italic;
+            font-style: normal; /* Forces non-italic */
         }
 
         .rsvp-section {
             background: #f9f9f9;
-            padding: 30px 20px;
-            margin-top: 25px;
-            border-radius: 8px;
-        }
-
-        h3 { 
-            font-weight: 600; 
-            margin-top: 0; 
-            font-size: 0.95rem; 
-            color: var(--dark-grey);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        input[type="text"] {
-            padding: 12px;
-            border: 1px solid #cccccc;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-            font-family: 'Cormorant Garamond', serif;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--text);
-        }
-
-        button {
-            padding: 16px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Cormorant Garamond', serif; 
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 3px; 
-            font-size: 0.9rem;
-            width: 100%;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-
-        .btn-yes { background: var(--gold); color: white; margin-bottom: 10px; }
-        .btn-no { background: #e0e0e0; color: #555555; }
-        
-        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; font-weight: 600;}
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2.6rem; }
-            .the-date { font-size: 1.6rem; }
-            .container { width: 92%; padding: 45px 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>Youssef & Maryam</h1>
-        <p class="invite-text">Are inviting you to celebrate<br>their engagement</p>
-
-        <span class="the-date">Saturday, March 28th - 7 PM</span>
-
-        <div id="countdown">
-            <div class="time-box"><span class="time-val" id="days">00</span><span class="time-label">Days</span></div>
-            <div class="time-box"><span class="time-val" id="hours">00</span><span class="time-label">Hrs</span></div>
-            <div class="time-box"><span class="time-val" id="mins">00</span><span class="time-label">Mins</span></div>
-            <div class="time-box"><span class="time-val" id="secs">00</span><span class="time-label">Secs</span></div>
-        </div>
-
-        <div class="details">
-            <span class="venue-invite">Can’t wait to celebrate our day with you at</span>
-            <a class="venue-link" href="https://maps.app.goo.gl/3fX8Y1fG7u8L9N6s7" target="_blank">📍Aperitivo</a>
-            <span class="address">157, 26th July street, Zamalek</span>
-            
-            <div class="min-charge-box">
-                <span class="min-charge">Minimum Charge: 1200 LE</span>
-                <span class="special-note">Your presence will make our day even more special</span>
-            </div>
-        </div>
-
-        <div class="rsvp-section">
-            <h3>Kindly RSVP</h3>
-            <div id="formWrapper">
-                <input type="text" id="guestName" placeholder="Full Name" required>
-                <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
-                <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
-            </div>
-            <p id="responseMsg" style="display:none;">Thank you! Your response has been saved.</p>
-        </div>
-    </div>
-
-    <script>
-        const targetDate = new Date("March 28, 2026 19:00:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            document.getElementById("days").innerText = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
-            document.getElementById("hours").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-            document.getElementById("mins").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-            document.getElementById("secs").innerText = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
-        }, 1000);
-
-        function submitRSVP(status) {
-            const name = document.getElementById('guestName').value;
-            const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
-            if (!name) { alert("Please enter your name."); return; }
-
-            document.getElementById('btnYes').innerText = "Sending...";
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify({ "name": name, "status": status })
-            }).then(() => {
-                document.getElementById('formWrapper').style.display = 'none';
-                document.getElementById('responseMsg').style.display = 'block';
-            });
-        }
-    </script>
-</body>
-</html>
+            padding
