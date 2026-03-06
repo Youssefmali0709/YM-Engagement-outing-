@@ -41,7 +41,6 @@
             margin: 20px auto;
         }
 
-        /* BALLMAIN STYLE: Using Bodoni Moda for high-contrast serif look */
         h1 {
             font-family: 'Bodoni Moda', serif;
             font-size: 2.2rem;
@@ -91,18 +90,17 @@
         .details {
             margin: 30px 0;
             line-height: 1.6;
-            font-size: 1.05rem;
             border-top: 1px solid #eeeeee;
             border-bottom: 1px solid #eeeeee;
             padding: 25px 0;
             color: var(--text);
         }
 
-        /* MOBILE FIX: Forcing same line for Aperitivo */
         .venue-full-line {
             display: block;
             margin-bottom: 8px;
-            white-space: nowrap; /* Prevents breaking to new line */
+            font-size: 1.05rem;
+            white-space: nowrap; 
         }
 
         .venue-link { 
@@ -112,29 +110,20 @@
             margin-left: 3px;
         }
 
-        .address {
+        /* Shared style for Address and Min Charge */
+        .secondary-info {
             display: block;
             font-size: 0.85rem;
             color: var(--medium-grey);
             margin-top: 5px;
-        }
-
-        .min-charge-box {
-            margin-top: 15px;
-        }
-
-        .min-charge {
-            font-size: 0.85rem; 
-            color: var(--medium-grey); 
-            display: block;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .special-note {
             font-size: 0.95rem;
             color: var(--dark-grey);
             display: block;
-            margin-top: 8px;
+            margin-top: 12px;
         }
 
         .rsvp-section {
@@ -188,9 +177,10 @@
         @media (max-width: 480px) {
             h1 { font-size: 1.8rem; }
             .the-date { font-size: 1.5rem; }
-            .venue-full-line { font-size: 0.85rem; }
-            .venue-link { font-size: 0.95rem; }
+            .venue-full-line { font-size: 0.82rem; }
+            .venue-link { font-size: 0.9rem; }
             .invite-text { font-size: 0.85rem; }
+            .secondary-info { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -211,10 +201,10 @@
 
         <div class="details">
             <span class="venue-full-line">Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.app.goo.gl/YourLinkHere" target="_blank">Aperitivo</a></span>
-            <span class="address">157, 26th July street, Zamalek</span>
+            <span class="secondary-info">157, 26th July street, Zamalek</span>
             
-            <div class="min-charge-box">
-                <span class="min-charge">Minimum Charge: 1200 LE</span>
+            <div style="margin-top: 15px;">
+                <span class="secondary-info">Minimum Charge: 1200 LE</span>
                 <span class="special-note">Your presence will make our day even more special</span>
             </div>
         </div>
