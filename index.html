@@ -18,62 +18,75 @@
             color: var(--text);
             font-family: 'Cormorant Garamond', serif;
             margin: 0;
+            padding: 0;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            min-height: 100vh;
             background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+            text-align: center; /* Ensures everything is centered */
         }
 
         .container {
-            padding: 60px 20px;
+            padding: 40px 20px;
             max-width: 500px;
-            width: 90%;
+            width: 85%;
             border: 1px solid var(--gold);
-            margin: 50px 10px;
             background: var(--white);
             box-shadow: 0 15px 40px rgba(0,0,0,0.05);
             position: relative;
             border-radius: 5px;
-        }
-
-        /* Floral Decoration (Pseudo-elements) */
-        .container::before {
-            content: "✿"; font-size: 2rem; color: var(--gold); position: absolute; top: 10px; left: 10px; opacity: 0.5;
-        }
-        .container::after {
-            content: "✿"; font-size: 2rem; color: var(--gold); position: absolute; bottom: 10px; right: 10px; opacity: 0.5;
+            margin: 20px auto;
         }
 
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.8rem;
+            font-size: 3rem; /* Adjusted for mobile fit */
             color: var(--gold);
-            margin: 0;
+            margin: 10px 0;
             font-weight: 400;
+            white-space: nowrap; /* Forces Youssef & Maryam on one line */
         }
 
-        h2 { font-weight: 300; letter-spacing: 4px; text-transform: uppercase; font-size: 1rem; margin-bottom: 20px; color: #888; }
+        h2 { 
+            font-weight: 300; 
+            letter-spacing: 4px; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+            margin-bottom: 10px; 
+            color: #888; 
+        }
 
+        /* The Date: Now Larger */
+        .the-date {
+            font-size: 1.8rem;
+            font-weight: 600;
+            display: block;
+            margin: 20px 0 10px 0;
+            color: var(--text);
+        }
+
+        /* The Countdown: Now Smaller */
         #countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 40px 0;
+            gap: 12px;
+            margin: 10px 0 30px 0;
         }
 
         .time-box {
             display: flex;
             flex-direction: column;
-            min-width: 60px;
+            min-width: 45px;
         }
 
-        .time-val { font-size: 2.2rem; color: var(--gold); font-weight: 600; }
-        .time-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+        .time-val { font-size: 1.2rem; color: var(--gold); font-weight: 600; }
+        .time-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #999; }
 
         .details {
-            margin: 40px 0;
-            line-height: 2;
-            font-size: 1.2rem;
+            margin: 30px 0;
+            line-height: 1.6;
+            font-size: 1.1rem;
             border-top: 1px solid #eee;
             border-bottom: 1px solid #eee;
             padding: 20px 0;
@@ -84,8 +97,8 @@
 
         .rsvp-section {
             background: #fafafa;
-            padding: 30px 20px;
-            margin-top: 30px;
+            padding: 25px 15px;
+            margin-top: 20px;
             border-radius: 8px;
         }
 
@@ -94,9 +107,10 @@
             border: 1px solid #ddd;
             width: 100%;
             box-sizing: border-box;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-family: inherit;
             border-radius: 4px;
+            text-align: center; /* Centers text inside input */
         }
 
         .btn-group { display: flex; flex-direction: column; gap: 10px; }
@@ -109,15 +123,20 @@
             transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             width: 100%;
         }
 
         .btn-yes { background: var(--gold); color: white; }
         .btn-no { background: #e0e0e0; color: #666; }
-        button:hover { opacity: 0.9; transform: translateY(-1px); }
+        
+        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; }
 
-        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.2rem; }
+        /* Media Query to shrink text on very small screens */
+        @media (max-width: 380px) {
+            h1 { font-size: 2.4rem; }
+            .the-date { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -125,7 +144,9 @@
     <div class="container">
         <h2>Save The Date</h2>
         <h1>Youssef & Maryam</h1>
-        <p style="letter-spacing: 2px; color: #777;">ARE GETTING ENGAGED</p>
+        <p style="letter-spacing: 2px; color: #777; font-size: 0.8rem;">ARE GETTING ENGAGED</p>
+
+        <span class="the-date">March 28, 2026</span>
 
         <div id="countdown">
             <div class="time-box"><span class="time-val" id="days">00</span><span class="time-label">Days</span></div>
@@ -135,17 +156,15 @@
         </div>
 
         <div class="details">
-            <span style="font-weight: 600;">Saturday, March 28, 2026</span><br>
-            At 7:00 PM<br>
-            Venue: <a class="venue" href="https://maps.app.goo.gl/aYjqKGjWmboGDMwY6" target="_blank">Aperitivo</a><br>
+            7:00 PM<br>
+            Venue: <a class="venue" href="https://maps.app.goo.gl/aYjqKGjWmboGDMwY6" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek<br>
             <span style="font-size: 0.9rem; color: #999;">Minimum Charge: 1200 LE</span>
         </div>
 
         <div class="rsvp-section">
-            <h3 style="font-weight: 300; margin-top: 0;">Kindly RSVP</h3>
+            <h3 style="font-weight: 300; margin-top: 0; font-size: 1rem;">Kindly RSVP</h3>
             <div id="formWrapper">
-                <input type="text" id="guestName" placeholder="Full Name" required>
-                <input type="text" id="songRequest" placeholder="Song Request (Optional)">
+                <input type="text" id="guestName" placeholder="Your Full Name" required>
                 <div class="btn-group">
                     <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
                     <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
@@ -177,35 +196,32 @@
         // --- RSVP SUBMISSION ---
         function submitRSVP(status) {
             const name = document.getElementById('guestName').value;
-            const song = document.getElementById('songRequest').value;
             const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
 
             if (!name) { 
-                alert("Please enter your name so we know who you are!"); 
+                alert("Please enter your name."); 
                 return; 
             }
 
-            // Change button state to show it's working
             const btnYes = document.getElementById('btnYes');
             const btnNo = document.getElementById('btnNo');
             btnYes.innerText = "Sending...";
             btnYes.disabled = true;
             btnNo.disabled = true;
 
-            // Send to Google Sheets
             fetch(scriptURL, {
                 method: 'POST',
-                mode: 'no-cors', // Standard for Google Script Web Apps
+                mode: 'no-cors',
                 cache: 'no-cache',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ "name": name, "status": status, "song": song })
+                body: JSON.stringify({ "name": name, "status": status })
             })
             .then(() => {
                 document.getElementById('formWrapper').style.display = 'none';
                 document.getElementById('responseMsg').style.display = 'block';
             })
             .catch(error => {
-                alert("Something went wrong. Please try again!");
+                alert("Error. Please try again!");
                 btnYes.innerText = "Joyfully Accept";
                 btnYes.disabled = false;
                 btnNo.disabled = false;
