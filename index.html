@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
@@ -30,7 +30,7 @@
         }
 
         .container {
-            padding: 50px 25px;
+            padding: 60px 25px;
             max-width: 480px;
             width: 88%;
             border: 1.5px solid var(--gold);
@@ -41,201 +41,27 @@
             margin: 20px auto;
         }
 
-        h2 { 
-            font-weight: 400; 
-            letter-spacing: 5px; 
-            text-transform: uppercase; 
-            font-size: 0.9rem; 
-            margin: 0 0 15px 0; 
-            color: var(--dark-grey); 
-        }
-
         h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.4rem; 
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
             color: var(--gold);
             margin: 0; 
-            padding: 10px 0;
-            font-weight: 600;
+            padding: 0;
+            font-weight: 400;
             white-space: nowrap;
             text-transform: none !important;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
-        .sub-header {
-            letter-spacing: 3px; 
+        .invite-text {
+            letter-spacing: 2px; 
             color: var(--dark-grey); 
-            font-size: 0.85rem; 
-            margin: 15px 0 0 0; 
+            font-size: 1rem; 
+            margin: 15px 0 25px 0; 
             text-transform: uppercase;
+            line-height: 1.4;
         }
 
         .the-date {
-            font-size: 2rem;
-            font-weight: 600;
-            display: block;
-            margin: 30px 0 5px 0;
-            color: var(--text);
-            letter-spacing: 1px;
-        }
-
-        #countdown {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin: 5px 0 35px 0;
-        }
-
-        .time-box {
-            display: flex;
-            flex-direction: column;
-            min-width: 45px;
-        }
-
-        .time-val { font-size: 1.15rem; color: var(--gold); font-weight: 600; }
-        .time-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: var(--medium-grey); font-weight: 600; }
-
-        .details {
-            margin: 30px 0;
-            line-height: 1.8;
-            font-size: 1.2rem;
-            border-top: 1px solid #eeeeee;
-            border-bottom: 1px solid #eeeeee;
-            padding: 25px 0;
-            color: var(--text);
-        }
-
-        a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); font-weight: 600; }
-
-        .min-charge {
-            font-size: 0.9rem; 
-            color: var(--medium-grey); 
-            display: block; 
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        .rsvp-section {
-            background: #f9f9f9;
-            padding: 30px 20px;
-            margin-top: 25px;
-            border-radius: 8px;
-        }
-
-        h3 { 
-            font-weight: 600; 
-            margin-top: 0; 
-            font-size: 1rem; 
-            color: var(--dark-grey);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Updated Placeholder Styling */
-        input[type="text"] {
-            padding: 12px;
-            border: 1px solid #cccccc;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-            font-family: 'Cormorant Garamond', serif;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 0.9rem; /* Smaller Font */
-            color: var(--text);
-        }
-
-        input[type="text"]::placeholder {
-            text-transform: none; /* Not All-Caps */
-            color: var(--medium-grey);
-            opacity: 0.8;
-        }
-
-        button {
-            padding: 16px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Cormorant Garamond', serif; 
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 3px; 
-            font-size: 0.9rem;
-            width: 100%;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-
-        .btn-yes { background: var(--gold); color: white; margin-bottom: 10px; }
-        .btn-no { background: #e0e0e0; color: #555555; }
-        
-        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; font-weight: 600;}
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2.1rem; }
-            .the-date { font-size: 1.7rem; }
-            .container { width: 90%; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h2>Save The Date</h2>
-        <h1>Youssef & Maryam</h1>
-        <p class="sub-header">Are Getting Engaged</p>
-
-        <span class="the-date">Saturday 28 March 2026</span>
-
-        <div id="countdown">
-            <div class="time-box"><span class="time-val" id="days">00</span><span class="time-label">Days</span></div>
-            <div class="time-box"><span class="time-val" id="hours">00</span><span class="time-label">Hrs</span></div>
-            <div class="time-box"><span class="time-val" id="mins">00</span><span class="time-label">Mins</span></div>
-            <div class="time-box"><span class="time-val" id="secs">00</span><span class="time-label">Secs</span></div>
-        </div>
-
-        <div class="details">
-            <a href="https://maps.app.goo.gl/aYjqKGjWmboGDMwY6" target="_blank">Aperitivo</a><br>
-            157, 26th July street, Zamalek<br>
-            <span class="min-charge">Minimum Charge: 1200 LE</span>
-        </div>
-
-        <div class="rsvp-section">
-            <h3>Kindly RSVP</h3>
-            <div id="formWrapper">
-                <input type="text" id="guestName" placeholder="Full Name" required>
-                <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
-                <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
-            </div>
-            <p id="responseMsg" style="display:none;">Thank you! Your response has been saved.</p>
-        </div>
-    </div>
-
-    <script>
-        const targetDate = new Date("March 28, 2026 19:00:00").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("mins").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("secs").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
-
-        function submitRSVP(status) {
-            const name = document.getElementById('guestName').value;
-            const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
-            if (!name) { alert("Please enter your name."); return; }
-
-            document.getElementById('btnYes').innerText = "Sending...";
-            fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify({ "name": name, "status": status })
-            }).then(() => {
-                document.getElementById('formWrapper').style.display = 'none';
-                document.getElementById('responseMsg').style.display = 'block';
-            });
-        }
-    </script>
-</body>
-</html>
+            font-size: 1.8rem;
+            font-weight: 6
