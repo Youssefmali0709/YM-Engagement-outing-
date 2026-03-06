@@ -96,34 +96,27 @@
             color: var(--text);
         }
 
-        .venue-full-line {
+        /* Unified style for Venue sentence and Special note */
+        .primary-note {
+            font-size: 0.95rem;
+            color: var(--dark-grey);
             display: block;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-            white-space: nowrap; 
+            font-style: normal;
         }
 
         .venue-link { 
             color: var(--gold); 
             text-decoration: none; 
             font-weight: 600;
-            margin-left: 3px;
         }
 
-        /* Shared style for Address and Min Charge */
+        /* Style for Address and Min Charge */
         .secondary-info {
             display: block;
             font-size: 0.85rem;
             color: var(--medium-grey);
-            margin-top: 5px;
+            margin-top: 4px;
             font-weight: 400;
-        }
-
-        .special-note {
-            font-size: 0.95rem;
-            color: var(--dark-grey);
-            display: block;
-            margin-top: 12px;
         }
 
         .rsvp-section {
@@ -177,8 +170,7 @@
         @media (max-width: 480px) {
             h1 { font-size: 1.8rem; }
             .the-date { font-size: 1.5rem; }
-            .venue-full-line { font-size: 0.82rem; }
-            .venue-link { font-size: 0.9rem; }
+            .primary-note { font-size: 0.9rem; }
             .invite-text { font-size: 0.85rem; }
             .secondary-info { font-size: 0.8rem; }
         }
@@ -200,12 +192,12 @@
         </div>
 
         <div class="details">
-            <span class="venue-full-line">Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.app.goo.gl/YourLinkHere" target="_blank">Aperitivo</a></span>
+            <span class="primary-note">Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.google.com/?q=Aperitivo+Zamalek" target="_blank">Aperitivo</a></span>
             <span class="secondary-info">157, 26th July street, Zamalek</span>
             
             <div style="margin-top: 15px;">
                 <span class="secondary-info">Minimum Charge: 1200 LE</span>
-                <span class="special-note">Your presence will make our day even more special</span>
+                <span class="primary-note" style="margin-top: 8px;">Your presence will make our day even more special</span>
             </div>
         </div>
 
