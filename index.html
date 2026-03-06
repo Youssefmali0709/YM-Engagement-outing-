@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
@@ -30,9 +30,9 @@
         }
 
         .container {
-            padding: 60px 25px;
+            padding: 60px 20px;
             max-width: 480px;
-            width: 88%;
+            width: 90%;
             border: 1.5px solid var(--gold);
             background: var(--white);
             box-shadow: 0 15px 40px rgba(0,0,0,0.08);
@@ -41,14 +41,14 @@
             margin: 20px auto;
         }
 
-        /* NEW CURSIVE FONT: Dancing Script */
+        /* FONT: Ballmain Style (Alex Brush is the closest high-quality web match) */
         h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.2rem;
             color: var(--gold);
             margin: 0; 
             padding: 0;
-            font-weight: 600;
+            font-weight: 400;
             white-space: nowrap;
             text-transform: none !important;
             line-height: 1.1;
@@ -57,14 +57,14 @@
         .invite-text {
             letter-spacing: 2px; 
             color: var(--dark-grey); 
-            font-size: 1rem; 
+            font-size: 0.95rem; 
             margin: 15px 0 25px 0; 
             text-transform: uppercase;
             line-height: 1.4;
         }
 
         .the-date {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 600;
             display: block;
             margin: 10px 0 5px 0;
@@ -91,53 +91,52 @@
         .details {
             margin: 30px 0;
             line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             border-top: 1px solid #eeeeee;
             border-bottom: 1px solid #eeeeee;
             padding: 25px 0;
             color: var(--text);
         }
 
-        /* Updated Venue Styling */
+        /* Fixed Mobile Line Wrap */
         .venue-full-line {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
+            display: inline;
+            word-spacing: -1px; /* Tighter spacing to help fit */
         }
 
         .venue-link { 
             color: var(--gold); 
             text-decoration: none; 
             font-weight: 600;
-            font-size: 1.2rem;
-            margin-left: 2px;
+            font-size: 1.1rem;
+            white-space: nowrap; /* Prevents "Aperitivo" from splitting */
         }
 
         .address {
             display: block;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--medium-grey);
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .min-charge-box {
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .min-charge {
-            font-size: 0.85rem; 
+            font-size: 0.8rem; 
             color: var(--medium-grey); 
             display: block;
             font-weight: 600;
+            letter-spacing: 1px;
         }
 
-        /* UPDATED: Removed Italic */
         .special-note {
             font-size: 1rem;
             color: var(--dark-grey);
             display: block;
-            margin-top: 8px;
-            font-style: normal; /* Forces non-italic */
+            margin-top: 10px;
+            font-style: normal;
         }
 
         .rsvp-section {
@@ -150,7 +149,7 @@
         h3 { 
             font-weight: 600; 
             margin-top: 0; 
-            font-size: 0.95rem; 
+            font-size: 0.9rem; 
             color: var(--dark-grey);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -189,9 +188,11 @@
         #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; font-weight: 600;}
 
         @media (max-width: 480px) {
-            h1 { font-size: 2.6rem; }
-            .the-date { font-size: 1.6rem; }
-            .container { width: 92%; padding: 45px 20px; }
+            h1 { font-size: 2.8rem; }
+            .the-date { font-size: 1.5rem; }
+            .venue-full-line { font-size: 0.95rem; }
+            .venue-link { font-size: 1rem; }
+            .container { padding: 45px 15px; }
         }
     </style>
 </head>
@@ -211,11 +212,13 @@
         </div>
 
         <div class="details">
-            <span class="venue-full-line">Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.app.goo.gl/3fX8Y1fG7u8L9N6s7" target="_blank">Aperitivo</a></span>
+            <div class="venue-full-line">
+                Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.google.com/?q=Aperitivo+Zamalek" target="_blank">Aperitivo</a>
+            </div>
             <span class="address">157, 26th July street, Zamalek</span>
             
             <div class="min-charge-box">
-                <span class="min-charge">Minimum Charge: 1200 LE</span>
+                <span class="min-charge">MINIMUM CHARGE: 1200 LE</span>
                 <span class="special-note">Your presence will make our day even more special</span>
             </div>
         </div>
@@ -232,9 +235,7 @@
     </div>
 
     <script>
-        // Use the exact date for countdown
         const targetDate = new Date("March 28, 2026 19:00:00").getTime();
-
         setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
@@ -248,7 +249,6 @@
             const name = document.getElementById('guestName').value;
             const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
             if (!name) { alert("Please enter your name."); return; }
-
             document.getElementById('btnYes').innerText = "Sending...";
             fetch(scriptURL, {
                 method: 'POST',
