@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
             --blush: #fffafc;
-            --text: #4a4a4a;
+            --dark-grey: #555555; /* Darker for better visibility */
+            --medium-grey: #777777;
+            --text: #333333;
             --white: #ffffff;
         }
 
@@ -33,49 +35,58 @@
             width: 88%;
             border: 1.5px solid var(--gold);
             background: var(--white);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
             position: relative;
             border-radius: 4px;
             margin: 20px auto;
         }
 
-        /* CURSIVE FONT WITH CAPITALIZATION FIX */
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.2rem; 
-            color: var(--gold);
-            margin: 10px 0;
-            font-weight: 600;
-            white-space: nowrap;
-            text-transform: none !important; /* Forces Y and M to stay capital */
-            display: block;
-        }
-
+        /* Centering the Names vertically between the two lines */
         h2 { 
-            font-weight: 300; 
+            font-weight: 400; 
             letter-spacing: 5px; 
             text-transform: uppercase; 
-            font-size: 0.85rem; 
-            margin-bottom: 5px; 
-            color: #999; 
+            font-size: 0.9rem; 
+            margin: 0 0 15px 0; /* Space below Save the Date */
+            color: var(--dark-grey); 
         }
 
-        /* Large Date as requested */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.4rem; 
+            color: var(--gold);
+            margin: 0; /* Removed margins to allow precise spacing */
+            padding: 10px 0;
+            font-weight: 600;
+            white-space: nowrap;
+            text-transform: none !important;
+            line-height: 1.2;
+        }
+
+        .sub-header {
+            letter-spacing: 3px; 
+            color: var(--dark-grey); 
+            font-size: 0.85rem; 
+            margin: 15px 0 0 0; /* Space above Are Getting Engaged */
+            text-transform: uppercase;
+        }
+
+        /* Large Date */
         .the-date {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
             display: block;
-            margin: 20px 0 5px 0;
+            margin: 30px 0 5px 0;
             color: var(--text);
             letter-spacing: 1px;
         }
 
-        /* Smaller Countdown */
+        /* Countdown - Darker Labels */
         #countdown {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin: 5px 0 30px 0;
+            margin: 5px 0 35px 0;
         }
 
         .time-box {
@@ -84,63 +95,67 @@
             min-width: 45px;
         }
 
-        .time-val { font-size: 1.1rem; color: var(--gold); font-weight: 600; }
-        .time-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #bbb; }
+        .time-val { font-size: 1.15rem; color: var(--gold); font-weight: 600; }
+        .time-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: var(--medium-grey); font-weight: 600; }
 
         .details {
             margin: 30px 0;
             line-height: 1.8;
-            font-size: 1.15rem;
-            border-top: 1px solid #f2f2f2;
-            border-bottom: 1px solid #f2f2f2;
+            font-size: 1.2rem;
+            border-top: 1px solid #eeeeee;
+            border-bottom: 1px solid #eeeeee;
             padding: 25px 0;
+            color: var(--text);
         }
 
         a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); font-weight: 600; }
 
+        .min-charge {
+            font-size: 0.9rem; 
+            color: var(--medium-grey); 
+            display: block; 
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
         .rsvp-section {
-            background: #fcfcfc;
-            padding: 25px 20px;
+            background: #f9f9f9;
+            padding: 30px 20px;
             margin-top: 25px;
             border-radius: 8px;
         }
 
+        h3 { 
+            font-weight: 600; 
+            margin-top: 0; 
+            font-size: 1rem; 
+            color: var(--dark-grey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         input[type="text"] {
             padding: 14px;
-            border: 1px solid #eee;
+            border: 1px solid #cccccc;
             width: 100%;
             box-sizing: border-box;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-family: inherit;
             border-radius: 5px;
             text-align: center;
             font-size: 1rem;
+            color: var(--text);
         }
 
-        .btn-group { display: flex; flex-direction: column; gap: 10px; }
-
-        button {
-            padding: 16px;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .btn-yes { background: var(--gold); color: white; }
-        .btn-no { background: #f0f0f0; color: #888; }
+        .btn-yes { background: var(--gold); color: white; padding: 16px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; border-radius: 5px; margin-bottom: 10px; font-weight: 600;}
+        .btn-no { background: #e0e0e0; color: #555555; padding: 16px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; border-radius: 5px; font-weight: 600;}
         
-        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; }
+        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; font-weight: 600;}
 
         @media (max-width: 480px) {
-            h1 { font-size: 1.9rem; }
-            .the-date { font-size: 1.5rem; }
-            .container { width: 90%; padding: 40px 15px; }
+            h1 { font-size: 2.1rem; }
+            .the-date { font-size: 1.7rem; }
+            .container { width: 90%; }
         }
     </style>
 </head>
@@ -149,7 +164,7 @@
     <div class="container">
         <h2>Save The Date</h2>
         <h1>Youssef & Maryam</h1>
-        <p style="letter-spacing: 2px; color: #aaa; font-size: 0.8rem; margin-top: -10px;">ARE GETTING ENGAGED</p>
+        <p class="sub-header">Are Getting Engaged</p>
 
         <span class="the-date">Saturday 28 March 2026</span>
 
@@ -163,26 +178,23 @@
         <div class="details">
             <a href="https://maps.app.goo.gl/aYjqKGjWmboGDMwY6" target="_blank">Aperitivo</a><br>
             157, 26th July street, Zamalek<br>
-            <span style="font-size: 0.85rem; color: #ccc;">Minimum Charge: 1200 LE</span>
+            <span class="min-charge">Minimum Charge: 1200 LE</span>
         </div>
 
         <div class="rsvp-section">
-            <h3 style="font-weight: 300; margin-top: 0; font-size: 1rem; color: #888;">Kindly RSVP</h3>
+            <h3>Kindly RSVP</h3>
             <div id="formWrapper">
-                <input type="text" id="guestName" placeholder="Enter Your Name" required>
-                <div class="btn-group">
-                    <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
-                    <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
-                </div>
+                <input type="text" id="guestName" placeholder="ENTER YOUR FULL NAME" required>
+                <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
+                <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
             </div>
             <p id="responseMsg" style="display:none;">Thank you! Your response has been saved.</p>
         </div>
     </div>
 
     <script>
-        // Countdown timer logic
         const targetDate = new Date("March 28, 2026 19:00:00").getTime();
-        const timer = setInterval(() => {
+        setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
