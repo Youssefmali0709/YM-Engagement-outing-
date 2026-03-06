@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
-            --blush: #fff5f5;
-            --text: #4a4a4a;
-            --white: #ffffff;
+            --blush: #fffcfc;
+            --text: #333333;
         }
 
         body {
@@ -23,86 +22,145 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
             text-align: center;
         }
 
         .container {
-            padding: 40px 20px;
-            max-width: 500px;
+            padding: 50px 30px;
+            max-width: 450px;
             width: 85%;
             border: 1px solid var(--gold);
-            background: var(--white);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-            position: relative;
-            border-radius: 5px;
-            margin: 20px auto;
-        }
-
-        /* Using Playfair Display to ensure Y and M are Capitalized */
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem; 
-            font-style: italic;
-            color: var(--gold);
-            margin: 15px 0;
-            font-weight: 600;
-            white-space: nowrap;
-            text-transform: none !important; /* Strict override */
-            letter-spacing: 1px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-radius: 2px;
         }
 
         h2 { 
-            font-weight: 300; 
-            letter-spacing: 4px; 
+            font-weight: 400; 
+            letter-spacing: 5px; 
             text-transform: uppercase; 
             font-size: 0.8rem; 
-            margin-bottom: 5px; 
-            color: #888; 
+            margin-bottom: 20px; 
+            color: #999; 
+        }
+
+        /* FONT FIX: Ensuring Y and M are capitalized */
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem; /* Sophisticated smaller size */
+            color: var(--gold);
+            margin: 10px 0;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: none !important; /* Disables any auto-lowercase */
         }
 
         .the-date {
-            font-size: 1.9rem;
-            font-weight: 600;
+            font-size: 2.2rem;
+            font-weight: 400;
             display: block;
-            margin: 15px 0 5px 0;
-            color: var(--text);
+            margin: 25px 0 5px 0;
+            letter-spacing: 1px;
         }
 
         #countdown {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin: 5px 0 25px 0;
+            gap: 15px;
+            margin: 5px 0 40px 0;
         }
 
-        .time-box {
-            display: flex;
-            flex-direction: column;
-            min-width: 40px;
-        }
-
-        .time-val { font-size: 1rem; color: var(--gold); font-weight: 600; }
-        .time-label { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+        .time-val { font-size: 0.9rem; color: var(--gold); font-weight: 600; }
+        .time-label { font-size: 0.6rem; text-transform: uppercase; color: #bbb; margin-left: 2px; }
 
         .details {
-            margin: 25px 0;
-            line-height: 1.6;
-            font-size: 1.1rem;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
+            margin: 30px 0;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            border-top: 0.5px solid #eee;
+            border-bottom: 0.5px solid #eee;
+            padding: 25px 0;
         }
 
-        a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); font-weight: 600; }
+        a { color: var(--gold); text-decoration: none; font-weight: 600; }
 
-        .rsvp-section {
-            background: #fafafa;
-            padding: 25px 15px;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
+        .rsvp-section { margin-top: 30px; }
 
         input[type="text"] {
             padding: 12px;
-            border: 1px solid
+            border: 1px solid #eee;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            font-family: inherit;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn-yes { background: var(--gold); color: white; padding: 14px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .btn-no { background: #f9f9f9; color: #999; padding: 14px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
+
+        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .the-date { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Save The Date</h2>
+        <h1>Youssef & Maryam</h1>
+        <p style="letter-spacing: 3px; color: #aaa; font-size: 0.7rem; margin-top: -5px;">ARE GETTING ENGAGED</p>
+
+        <span class="the-date">Saturday 28 March 2026</span>
+
+        <div id="countdown">
+            <div><span class="time-val" id="days">00</span><span class="time-label">d</span></div>
+            <div><span class="time-val" id="hours">00</span><span class="time-label">h</span></div>
+            <div><span class="time-val" id="mins">00</span><span class="time-label">m</span></div>
+            <div><span class="time-val" id="secs">00</span><span class="time-label">s</span></div>
+        </div>
+
+        <div class="details">
+            <a href="https://maps.app.goo.gl/aYjqKGjWmboGDMwY6" target="_blank">Aperitivo</a><br>
+            157, 26th July street, Zamalek<br>
+            <span style="font-size: 0.85rem; color: #bbb; letter-spacing: 1px;">MINIMUM CHARGE: 1200 LE</span>
+        </div>
+
+        <div class="rsvp-section">
+            <div id="formWrapper">
+                <input type="text" id="guestName" placeholder="ENTER YOUR NAME" required>
+                <button type="button" class="btn-yes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
+                <button type="button" class="btn-no" onclick="submitRSVP('No')">Regretfully Decline</button>
+            </div>
+            <p id="responseMsg" style="display:none;">We have received your response. Thank you!</p>
+        </div>
+    </div>
+
+    <script>
+        const targetDate = new Date("March 28, 2026 19:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            document.getElementById("days").innerText = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+            document.getElementById("hours").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            document.getElementById("mins").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+            document.getElementById("secs").innerText = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+        }, 1000);
+
+        function submitRSVP(status) {
+            const name = document.getElementById('guestName').value;
+            const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
+            if (!name) { alert("Please enter your name."); return; }
+            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({ "name": name, "status": status })})
+            .then(() => {
+                document.getElementById('formWrapper').style.display = 'none';
+                document.getElementById('responseMsg').style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
