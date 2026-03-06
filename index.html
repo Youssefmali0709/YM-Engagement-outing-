@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@600&family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Bodoni+Moda:ital,wght@1,600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
@@ -41,17 +41,17 @@
             margin: 20px auto;
         }
 
-        /* FONT: Ballmain Style (Alex Brush is the closest high-quality web match) */
+        /* BALLMAIN STYLE: Using Bodoni Moda for high-contrast serif look */
         h1 {
-            font-family: 'Alex Brush', cursive;
-            font-size: 3.2rem;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2.2rem;
+            font-style: italic;
             color: var(--gold);
             margin: 0; 
             padding: 0;
-            font-weight: 400;
-            white-space: nowrap;
+            font-weight: 600;
             text-transform: none !important;
-            line-height: 1.1;
+            letter-spacing: 1px;
         }
 
         .invite-text {
@@ -64,7 +64,7 @@
         }
 
         .the-date {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             font-weight: 600;
             display: block;
             margin: 10px 0 5px 0;
@@ -98,45 +98,43 @@
             color: var(--text);
         }
 
-        /* Fixed Mobile Line Wrap */
+        /* MOBILE FIX: Forcing same line for Aperitivo */
         .venue-full-line {
-            display: inline;
-            word-spacing: -1px; /* Tighter spacing to help fit */
+            display: block;
+            margin-bottom: 8px;
+            white-space: nowrap; /* Prevents breaking to new line */
         }
 
         .venue-link { 
             color: var(--gold); 
             text-decoration: none; 
             font-weight: 600;
-            font-size: 1.1rem;
-            white-space: nowrap; /* Prevents "Aperitivo" from splitting */
+            margin-left: 3px;
         }
 
         .address {
             display: block;
             font-size: 0.85rem;
             color: var(--medium-grey);
-            margin-top: 8px;
+            margin-top: 5px;
         }
 
         .min-charge-box {
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .min-charge {
-            font-size: 0.8rem; 
+            font-size: 0.85rem; 
             color: var(--medium-grey); 
             display: block;
             font-weight: 600;
-            letter-spacing: 1px;
         }
 
         .special-note {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--dark-grey);
             display: block;
-            margin-top: 10px;
-            font-style: normal;
+            margin-top: 8px;
         }
 
         .rsvp-section {
@@ -149,7 +147,7 @@
         h3 { 
             font-weight: 600; 
             margin-top: 0; 
-            font-size: 0.9rem; 
+            font-size: 0.95rem; 
             color: var(--dark-grey);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -176,7 +174,7 @@
             transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 3px; 
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             width: 100%;
             border-radius: 5px;
             font-weight: 600;
@@ -188,11 +186,11 @@
         #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; font-weight: 600;}
 
         @media (max-width: 480px) {
-            h1 { font-size: 2.8rem; }
+            h1 { font-size: 1.8rem; }
             .the-date { font-size: 1.5rem; }
-            .venue-full-line { font-size: 0.95rem; }
-            .venue-link { font-size: 1rem; }
-            .container { padding: 45px 15px; }
+            .venue-full-line { font-size: 0.85rem; }
+            .venue-link { font-size: 0.95rem; }
+            .invite-text { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -212,13 +210,11 @@
         </div>
 
         <div class="details">
-            <div class="venue-full-line">
-                Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.google.com/?q=Aperitivo+Zamalek" target="_blank">Aperitivo</a>
-            </div>
+            <span class="venue-full-line">Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.app.goo.gl/YourLinkHere" target="_blank">Aperitivo</a></span>
             <span class="address">157, 26th July street, Zamalek</span>
             
             <div class="min-charge-box">
-                <span class="min-charge">MINIMUM CHARGE: 1200 LE</span>
+                <span class="min-charge">Minimum Charge: 1200 LE</span>
                 <span class="special-note">Your presence will make our day even more special</span>
             </div>
         </div>
