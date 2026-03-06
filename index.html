@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
-            --blush: #fffcfc;
-            --text: #333333;
+            --blush: #fffafc;
+            --text: #4a4a4a;
+            --white: #ffffff;
         }
 
         body {
@@ -22,89 +23,124 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
             text-align: center;
         }
 
         .container {
-            padding: 50px 30px;
-            max-width: 450px;
-            width: 85%;
-            border: 1px solid var(--gold);
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border-radius: 2px;
+            padding: 50px 25px;
+            max-width: 480px;
+            width: 88%;
+            border: 1.5px solid var(--gold);
+            background: var(--white);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            position: relative;
+            border-radius: 4px;
+            margin: 20px auto;
         }
 
-        h2 { 
-            font-weight: 400; 
-            letter-spacing: 5px; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-            margin-bottom: 20px; 
-            color: #999; 
-        }
-
-        /* FONT FIX: Ensuring Y and M are capitalized */
+        /* CURSIVE FONT WITH CAPITALIZATION FIX */
         h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem; /* Sophisticated smaller size */
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem; 
             color: var(--gold);
             margin: 10px 0;
             font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: none !important; /* Disables any auto-lowercase */
+            white-space: nowrap;
+            text-transform: none !important; /* Forces Y and M to stay capital */
+            display: block;
         }
 
+        h2 { 
+            font-weight: 300; 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            margin-bottom: 5px; 
+            color: #999; 
+        }
+
+        /* Large Date as requested */
         .the-date {
-            font-size: 2.2rem;
-            font-weight: 400;
+            font-size: 1.8rem;
+            font-weight: 600;
             display: block;
-            margin: 25px 0 5px 0;
+            margin: 20px 0 5px 0;
+            color: var(--text);
             letter-spacing: 1px;
         }
 
+        /* Smaller Countdown */
         #countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 5px 0 40px 0;
+            gap: 12px;
+            margin: 5px 0 30px 0;
         }
 
-        .time-val { font-size: 0.9rem; color: var(--gold); font-weight: 600; }
-        .time-label { font-size: 0.6rem; text-transform: uppercase; color: #bbb; margin-left: 2px; }
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            min-width: 45px;
+        }
+
+        .time-val { font-size: 1.1rem; color: var(--gold); font-weight: 600; }
+        .time-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #bbb; }
 
         .details {
             margin: 30px 0;
             line-height: 1.8;
-            font-size: 1.2rem;
-            border-top: 0.5px solid #eee;
-            border-bottom: 0.5px solid #eee;
+            font-size: 1.15rem;
+            border-top: 1px solid #f2f2f2;
+            border-bottom: 1px solid #f2f2f2;
             padding: 25px 0;
         }
 
-        a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); font-weight: 600; }
 
-        .rsvp-section { margin-top: 30px; }
+        .rsvp-section {
+            background: #fcfcfc;
+            padding: 25px 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
 
         input[type="text"] {
-            padding: 12px;
+            padding: 14px;
             border: 1px solid #eee;
             width: 100%;
             box-sizing: border-box;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-family: inherit;
+            border-radius: 5px;
             text-align: center;
             font-size: 1rem;
         }
 
-        .btn-yes { background: var(--gold); color: white; padding: 14px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-        .btn-no { background: #f9f9f9; color: #999; padding: 14px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
 
-        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; }
+        button {
+            padding: 16px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .btn-yes { background: var(--gold); color: white; }
+        .btn-no { background: #f0f0f0; color: #888; }
+        
+        #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; }
 
         @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; }
-            .the-date { font-size: 1.8rem; }
+            h1 { font-size: 1.9rem; }
+            .the-date { font-size: 1.5rem; }
+            .container { width: 90%; padding: 40px 15px; }
         }
     </style>
 </head>
@@ -113,50 +149,59 @@
     <div class="container">
         <h2>Save The Date</h2>
         <h1>Youssef & Maryam</h1>
-        <p style="letter-spacing: 3px; color: #aaa; font-size: 0.7rem; margin-top: -5px;">ARE GETTING ENGAGED</p>
+        <p style="letter-spacing: 2px; color: #aaa; font-size: 0.8rem; margin-top: -10px;">ARE GETTING ENGAGED</p>
 
         <span class="the-date">Saturday 28 March 2026</span>
 
         <div id="countdown">
-            <div><span class="time-val" id="days">00</span><span class="time-label">d</span></div>
-            <div><span class="time-val" id="hours">00</span><span class="time-label">h</span></div>
-            <div><span class="time-val" id="mins">00</span><span class="time-label">m</span></div>
-            <div><span class="time-val" id="secs">00</span><span class="time-label">s</span></div>
+            <div class="time-box"><span class="time-val" id="days">00</span><span class="time-label">Days</span></div>
+            <div class="time-box"><span class="time-val" id="hours">00</span><span class="time-label">Hrs</span></div>
+            <div class="time-box"><span class="time-val" id="mins">00</span><span class="time-label">Mins</span></div>
+            <div class="time-box"><span class="time-val" id="secs">00</span><span class="time-label">Secs</span></div>
         </div>
 
         <div class="details">
             <a href="https://maps.app.goo.gl/aYjqKGjWmboGDMwY6" target="_blank">Aperitivo</a><br>
             157, 26th July street, Zamalek<br>
-            <span style="font-size: 0.85rem; color: #bbb; letter-spacing: 1px;">MINIMUM CHARGE: 1200 LE</span>
+            <span style="font-size: 0.85rem; color: #ccc;">Minimum Charge: 1200 LE</span>
         </div>
 
         <div class="rsvp-section">
+            <h3 style="font-weight: 300; margin-top: 0; font-size: 1rem; color: #888;">Kindly RSVP</h3>
             <div id="formWrapper">
-                <input type="text" id="guestName" placeholder="ENTER YOUR NAME" required>
-                <button type="button" class="btn-yes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
-                <button type="button" class="btn-no" onclick="submitRSVP('No')">Regretfully Decline</button>
+                <input type="text" id="guestName" placeholder="Enter Your Name" required>
+                <div class="btn-group">
+                    <button type="button" class="btn-yes" id="btnYes" onclick="submitRSVP('Yes')">Joyfully Accept</button>
+                    <button type="button" class="btn-no" id="btnNo" onclick="submitRSVP('No')">Regretfully Decline</button>
+                </div>
             </div>
-            <p id="responseMsg" style="display:none;">We have received your response. Thank you!</p>
+            <p id="responseMsg" style="display:none;">Thank you! Your response has been saved.</p>
         </div>
     </div>
 
     <script>
+        // Countdown timer logic
         const targetDate = new Date("March 28, 2026 19:00:00").getTime();
-        setInterval(() => {
+        const timer = setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            document.getElementById("days").innerText = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
-            document.getElementById("hours").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-            document.getElementById("mins").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-            document.getElementById("secs").innerText = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerText = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
 
         function submitRSVP(status) {
             const name = document.getElementById('guestName').value;
             const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
             if (!name) { alert("Please enter your name."); return; }
-            fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({ "name": name, "status": status })})
-            .then(() => {
+
+            document.getElementById('btnYes').innerText = "Sending...";
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({ "name": name, "status": status })
+            }).then(() => {
                 document.getElementById('formWrapper').style.display = 'none';
                 document.getElementById('responseMsg').style.display = 'block';
             });
