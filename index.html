@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Rochester&display=swap" rel="stylesheet">
+    <title>Youssef & Mariam | Engagement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
@@ -41,16 +41,16 @@
             margin: 20px auto;
         }
 
-        /* Rochester font for names */
+        /* Italianno Font applied to names */
         h1 {
-            font-family: 'Rochester', cursive;
-            font-size: 3rem; 
+            font-family: 'Italianno', cursive;
+            font-size: 4rem; /* Italianno is quite delicate, so I've increased the size for impact */
             color: var(--gold);
             margin: 0; 
             padding: 0;
             font-weight: 400;
             text-transform: none !important;
-            line-height: 1.1;
+            line-height: 1;
             letter-spacing: 1px;
         }
 
@@ -58,7 +58,7 @@
             letter-spacing: 1px; 
             color: var(--dark-grey); 
             font-size: 1.1rem; 
-            margin: 12px 0 25px 0; 
+            margin: 10px 0 25px 0; 
             text-transform: capitalize;
             line-height: 1.4;
         }
@@ -107,7 +107,7 @@
             color: var(--gold); 
             text-decoration: none; 
             font-weight: 600;
-            font-size: 0.95rem; /* Matched to primary-note */
+            font-size: 0.95rem; 
         }
 
         .secondary-info {
@@ -119,7 +119,7 @@
         }
 
         .special-note-gold {
-            font-size: 0.95rem; /* Matched to primary-note */
+            font-size: 0.95rem;
             color: var(--gold);
             display: block;
             margin-top: 12px;
@@ -176,7 +176,7 @@
         #responseMsg { font-style: italic; color: var(--gold); margin-top: 20px; font-size: 1.1rem; font-weight: 600;}
 
         @media (max-width: 480px) {
-            h1 { font-size: 2.6rem; }
+            h1 { font-size: 3.5rem; }
             .the-date { font-size: 1.5rem; }
             .primary-note, .special-note-gold, .venue-link { font-size: 0.9rem; }
             .invite-text { font-size: 0.95rem; }
@@ -187,7 +187,7 @@
 <body>
 
     <div class="container">
-        <h1>Youssef & Maryam</h1>
+        <h1>Youssef & Mariam</h1>
         <p class="invite-text">Are Inviting You To Celebrate<br>Their Engagement</p>
 
         <span class="the-date">Saturday, March 28th - 7 PM</span>
@@ -202,7 +202,7 @@
         <div class="details">
             <span class="primary-note">Can’t wait to celebrate our day with you at</span>
             <span class="secondary-info">
-                <a class="venue-link" href="https://maps.google.com" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek
+                <a class="venue-link" href="https://maps.google.com/?q=Aperitivo+Zamalek" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek
             </span>
             
             <div style="margin-top: 15px;">
@@ -235,8 +235,8 @@
 
         function submitRSVP(status) {
             const name = document.getElementById('guestName').value;
-            // Ensure this scriptURL is your actual Google Apps Script URL
-            const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+            // Place your final Google Apps Script URL here
+            const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
             if (!name) { alert("Please enter your name."); return; }
             document.getElementById('btnYes').innerText = "Sending...";
             fetch(scriptURL, {
