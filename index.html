@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youssef & Maryam | Engagement</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Rochester&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #c5a059;
@@ -41,22 +41,24 @@
             margin: 20px auto;
         }
 
+        /* Rochester font for names */
         h1 {
-            font-family: 'Parisienne', cursive;
-            font-size: 3.2rem;
+            font-family: 'Rochester', cursive;
+            font-size: 3rem; 
             color: var(--gold);
             margin: 0; 
             padding: 0;
             font-weight: 400;
             text-transform: none !important;
-            line-height: 1.2;
+            line-height: 1.1;
+            letter-spacing: 1px;
         }
 
         .invite-text {
             letter-spacing: 1px; 
             color: var(--dark-grey); 
             font-size: 1.1rem; 
-            margin: 10px 0 25px 0; 
+            margin: 12px 0 25px 0; 
             text-transform: capitalize;
             line-height: 1.4;
         }
@@ -95,19 +97,17 @@
             color: var(--text);
         }
 
-        /* Base size for both primary notes and the venue name */
         .primary-note {
             font-size: 0.95rem; 
             color: var(--dark-grey);
             display: block;
         }
 
-        /* UPDATED: Font size matches .primary-note exactly */
         .venue-link { 
             color: var(--gold); 
             text-decoration: none; 
             font-weight: 600;
-            font-size: 0.95rem; 
+            font-size: 0.95rem; /* Matched to primary-note */
         }
 
         .secondary-info {
@@ -119,7 +119,7 @@
         }
 
         .special-note-gold {
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* Matched to primary-note */
             color: var(--gold);
             display: block;
             margin-top: 12px;
@@ -202,7 +202,7 @@
         <div class="details">
             <span class="primary-note">Can’t wait to celebrate our day with you at</span>
             <span class="secondary-info">
-                <a class="venue-link" href="https://maps.app.goo.gl/9Wp9Y8G8N9W8G9W8" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek
+                <a class="venue-link" href="https://maps.google.com" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek
             </span>
             
             <div style="margin-top: 15px;">
@@ -235,7 +235,8 @@
 
         function submitRSVP(status) {
             const name = document.getElementById('guestName').value;
-            const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
+            // Ensure this scriptURL is your actual Google Apps Script URL
+            const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
             if (!name) { alert("Please enter your name."); return; }
             document.getElementById('btnYes').innerText = "Sending...";
             fetch(scriptURL, {
