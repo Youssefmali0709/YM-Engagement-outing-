@@ -52,13 +52,12 @@
             line-height: 1.2;
         }
 
-        /* Updated to Proper Case */
         .invite-text {
             letter-spacing: 1px; 
             color: var(--dark-grey); 
             font-size: 1.1rem; 
             margin: 10px 0 25px 0; 
-            text-transform: capitalize; /* Forces first letter of each word to be capital */
+            text-transform: capitalize;
             line-height: 1.4;
         }
 
@@ -97,7 +96,7 @@
         }
 
         .primary-note {
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* Base size for the invitation notes */
             color: var(--dark-grey);
             display: block;
         }
@@ -116,9 +115,9 @@
             font-weight: 400;
         }
 
-        /* NEW GOLD STYLE for the special note */
+        /* Updated Golden Note with matching font size */
         .special-note-gold {
-            font-size: 1.05rem;
+            font-size: 0.95rem; /* Matches .primary-note */
             color: var(--gold);
             display: block;
             margin-top: 12px;
@@ -177,10 +176,9 @@
         @media (max-width: 480px) {
             h1 { font-size: 2.6rem; }
             .the-date { font-size: 1.5rem; }
-            .primary-note { font-size: 0.9rem; }
+            .primary-note, .special-note-gold { font-size: 0.9rem; }
             .invite-text { font-size: 0.95rem; }
             .secondary-info { font-size: 0.8rem; }
-            .special-note-gold { font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -207,7 +205,7 @@
             
             <div style="margin-top: 15px;">
                 <span class="secondary-info">Minimum Charge: 1200 LE</span>
-                <span class="special-note-gold">Your Presence Will Make Our Day Even More Special</span>
+                <span class="special-note-gold">Your Presence Will Make Our Day Even More Special!</span>
             </div>
         </div>
 
