@@ -95,16 +95,19 @@
             color: var(--text);
         }
 
+        /* Base size for both primary notes and the venue name */
         .primary-note {
-            font-size: 0.95rem; /* Base size for the invitation notes */
+            font-size: 0.95rem; 
             color: var(--dark-grey);
             display: block;
         }
 
+        /* UPDATED: Font size matches .primary-note exactly */
         .venue-link { 
             color: var(--gold); 
             text-decoration: none; 
             font-weight: 600;
+            font-size: 0.95rem; 
         }
 
         .secondary-info {
@@ -115,9 +118,8 @@
             font-weight: 400;
         }
 
-        /* Updated Golden Note with matching font size */
         .special-note-gold {
-            font-size: 0.95rem; /* Matches .primary-note */
+            font-size: 0.95rem;
             color: var(--gold);
             display: block;
             margin-top: 12px;
@@ -176,7 +178,7 @@
         @media (max-width: 480px) {
             h1 { font-size: 2.6rem; }
             .the-date { font-size: 1.5rem; }
-            .primary-note, .special-note-gold { font-size: 0.9rem; }
+            .primary-note, .special-note-gold, .venue-link { font-size: 0.9rem; }
             .invite-text { font-size: 0.95rem; }
             .secondary-info { font-size: 0.8rem; }
         }
@@ -200,7 +202,7 @@
         <div class="details">
             <span class="primary-note">Can’t wait to celebrate our day with you at</span>
             <span class="secondary-info">
-                <a class="venue-link" href="https://maps.google.com/?q=Aperitivo+Zamalek" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek
+                <a class="venue-link" href="https://maps.app.goo.gl/9Wp9Y8G8N9W8G9W8" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek
             </span>
             
             <div style="margin-top: 15px;">
