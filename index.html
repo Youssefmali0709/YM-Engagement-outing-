@@ -41,25 +41,24 @@
             margin: 20px auto;
         }
 
-        /* MATCHED TO BALLMAIN IMAGE */
         h1 {
             font-family: 'Parisienne', cursive;
-            font-size: 3.2rem; /* Adjusted for this specific font's scale */
+            font-size: 3.2rem;
             color: var(--gold);
             margin: 0; 
             padding: 0;
             font-weight: 400;
             text-transform: none !important;
-            letter-spacing: 0;
             line-height: 1.2;
         }
 
+        /* Updated to Proper Case */
         .invite-text {
-            letter-spacing: 2px; 
+            letter-spacing: 1px; 
             color: var(--dark-grey); 
-            font-size: 0.95rem; 
+            font-size: 1.1rem; 
             margin: 10px 0 25px 0; 
-            text-transform: uppercase;
+            text-transform: capitalize; /* Forces first letter of each word to be capital */
             line-height: 1.4;
         }
 
@@ -117,6 +116,16 @@
             font-weight: 400;
         }
 
+        /* NEW GOLD STYLE for the special note */
+        .special-note-gold {
+            font-size: 1.05rem;
+            color: var(--gold);
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
         .rsvp-section {
             background: #f9f9f9;
             padding: 30px 20px;
@@ -169,8 +178,9 @@
             h1 { font-size: 2.6rem; }
             .the-date { font-size: 1.5rem; }
             .primary-note { font-size: 0.9rem; }
-            .invite-text { font-size: 0.85rem; }
+            .invite-text { font-size: 0.95rem; }
             .secondary-info { font-size: 0.8rem; }
+            .special-note-gold { font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -178,7 +188,7 @@
 
     <div class="container">
         <h1>Youssef & Maryam</h1>
-        <p class="invite-text">Are inviting you to celebrate<br>their engagement</p>
+        <p class="invite-text">Are Inviting You To Celebrate<br>Their Engagement</p>
 
         <span class="the-date">Saturday, March 28th - 7 PM</span>
 
@@ -190,12 +200,14 @@
         </div>
 
         <div class="details">
-            <span class="primary-note">Can’t wait to celebrate our day with you at <a class="venue-link" href="https://maps.google.com" target="_blank">Aperitivo</a></span>
-            <span class="secondary-info">157, 26th July street, Zamalek</span>
+            <span class="primary-note">Can’t wait to celebrate our day with you at</span>
+            <span class="secondary-info">
+                <a class="venue-link" href="https://maps.google.com/?q=Aperitivo+Zamalek" target="_blank">Aperitivo</a>, 157, 26th July street, Zamalek
+            </span>
             
             <div style="margin-top: 15px;">
                 <span class="secondary-info">Minimum Charge: 1200 LE</span>
-                <span class="primary-note" style="margin-top: 8px;">Your presence will make our day even more special</span>
+                <span class="special-note-gold">Your Presence Will Make Our Day Even More Special</span>
             </div>
         </div>
 
