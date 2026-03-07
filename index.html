@@ -41,10 +41,9 @@
             margin: 20px auto;
         }
 
-        /* Italianno Font applied to names */
         h1 {
             font-family: 'Italianno', cursive;
-            font-size: 4rem; /* Italianno is quite delicate, so I've increased the size for impact */
+            font-size: 4rem; 
             color: var(--gold);
             margin: 0; 
             padding: 0;
@@ -235,17 +234,34 @@
 
         function submitRSVP(status) {
             const name = document.getElementById('guestName').value;
-            // Place your final Google Apps Script URL here
-            const scriptURL = 'https://script.google.com/a/macros/aucegypt.edu/s/AKfycbx9CnFGSX5vugFPF7gaRhfvL7VigjuWwpvat2JMWTcwDlDBt-aj3rYKdxF2Y42j6eO9DQ/exec';
-            if (!name) { alert("Please enter your name."); return; }
-            document.getElementById('btnYes').innerText = "Sending...";
+            // Updated Script URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzzf5eudLxGv_XAZsBR8XoSex9T7Y8vmsQmoFM3XlQSYWgjisFvArooHktGzkmyvywcIQ/exec';
+
+            if (!name) { 
+                alert("Please enter your name."); 
+                return; 
+            }
+
+            const btn = status === 'Yes' ? document.getElementById('btnYes') : document.getElementById('btnNo');
+            const originalText = btn.innerText;
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
             fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ "name": name, "status": status })
-            }).then(() => {
+            })
+            .then(() => {
                 document.getElementById('formWrapper').style.display = 'none';
                 document.getElementById('responseMsg').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert("There was an error saving your RSVP. Please try again.");
+                btn.innerText = originalText;
+                btn.disabled = false;
             });
         }
     </script>
